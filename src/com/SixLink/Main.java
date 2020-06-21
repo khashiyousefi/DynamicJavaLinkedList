@@ -14,6 +14,7 @@ public class Main {
         list.addFirst(2);
         list.addLast(40);
         System.out.println(list.indexOf(2));
+        System.out.println(list.contains(20));
 
     }
 }

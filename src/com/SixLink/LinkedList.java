@@ -43,9 +43,10 @@ public class LinkedList {
     public void deleteLast(){
 
     }
-    public void contains(){
-
+    public boolean contains(int item){
+        return indexOf(item) != -1;
     }
+
     public int indexOf(int item){
         Node current = first;
         int index = 0;
@@ -55,7 +56,6 @@ public class LinkedList {
             index++;
         }
         return -1;
-
     }
 
 }
