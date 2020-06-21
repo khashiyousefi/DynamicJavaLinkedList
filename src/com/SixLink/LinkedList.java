@@ -26,7 +26,15 @@ public class LinkedList {
 
 
     }
-    public void addFirst(){
+    public void addFirst(int item){
+        Node node = new Node(item);
+
+        if (first == null){
+            first = last = node;
+        }else{
+            node.next = first;
+            first = node;
+        }
 
     }
     public void deleteFirst(){
@@ -38,7 +46,15 @@ public class LinkedList {
     public void contains(){
 
     }
-    public void indexOf(){
+    public int indexOf(int item){
+        Node current = first;
+        int index = 0;
+        while (current != null){
+            if (current.value == item) return index;
+            current = current.next;
+            index++;
+        }
+        return -1;
 
     }
 
