@@ -12,9 +12,7 @@ public class LinkedList {
     }
     private Node first;
     private Node last;
-
-    
-
+    private int size;
 
     public void addLast(int item){
         Node node = new Node(item);
@@ -25,9 +23,9 @@ public class LinkedList {
             last.next = node;
             last = node;
         }
-
-
+        size++;
     }
+
     public void addFirst(int item){
         Node node = new Node(item);
 
@@ -37,8 +35,9 @@ public class LinkedList {
             node.next = first;
             first = node;
         }
-
+        size++;
     }
+
     public void removeFirst(){
 
         if (first == null){
@@ -46,11 +45,13 @@ public class LinkedList {
         }
         if (first == last){
             first = last = null;
+            size--;
             return;
         }
         Node second = first.next;
         first.next = null;
         first = second;
+        size--;
     }
 
     public void removeLast(){
@@ -59,6 +60,7 @@ public class LinkedList {
         }
         if (first == last){
             first = last = null;
+            size--;
             return;
         }
         Node current = first;
@@ -69,7 +71,9 @@ public class LinkedList {
             }
             current = current.next;
         }
+        size--;
     }
+
     public boolean contains(int item){
         return indexOf(item) != -1;
     }
@@ -83,6 +87,10 @@ public class LinkedList {
             index++;
         }
         return -1;
+    }
+
+    public int size(){
+        return size;
     }
 
 }
