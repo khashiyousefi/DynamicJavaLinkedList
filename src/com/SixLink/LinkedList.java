@@ -1,5 +1,6 @@
 package com.SixLink;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class LinkedList {
@@ -72,6 +73,18 @@ public class LinkedList {
             current = current.next;
         }
         size--;
+    }
+
+    public int[] toArray(){
+        int[] array = new int[size];
+        int index = 0;
+        Node current = first;
+        while(current != null){
+            array[index] = current.value;
+            index++;
+            current = current.next;
+        }
+        return array;
     }
 
     public boolean contains(int item){
