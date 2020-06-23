@@ -86,9 +86,65 @@ public class LinkedList {
         }
         return array;
     }
+//    public void reverse(){
+////        Node copyList = new Node(first.value);
+//        Node end = last;
+//
+//        for (int i = 1; i < size;i++){
+//            Node current = first;
+//            while (current.value != end.value){
+//                if (current.next.value == end.value){
+//                    Node beforeCurrent = previous(current);
+//                    last.next = current;
+//                    last = current;
+//                    current.next = null;
+//                    if (beforeCurrent == null){
+////                        current.next = null;
+//                        current = end;
+//                        first = end;
+//                    }else{
+//                        beforeCurrent.next = end;
+//                        current = beforeCurrent;
+//                    }
+//                }
+//                if (current != end){
+//                current = current.next;
+//                }
+//            }
+//        }
+//
+//    }
+    public void reverse(){
+        Node before = first;
+        Node current = first.next;
+        while (current != null){
+            Node next = current.next;
+            current.next = before;
+            before = current;
+            current = next;
+        }
+        last = first;
+        last.next = null;
+        first = before;
+
+    }
 
     public boolean contains(int item){
         return indexOf(item) != -1;
+    }
+
+    private Node previous(Node target){
+        Node end = target;
+        Node before = null;
+        Node current = first;
+        while (current != null){
+            if (current.next == target) {
+                before = current;
+                break;
+            }
+            current = current.next;
+        }
+        return before;
     }
 
     public int indexOf(int item){
