@@ -55,6 +55,10 @@ public class LinkedList {
         size--;
     }
 
+    public void getKthFromTheEnd(){
+        
+    }
+
     public void removeLast(){
         if (first == null){
             throw new NoSuchElementException();
@@ -115,6 +119,7 @@ public class LinkedList {
 //
 //    }
     public void reverse(){
+        if (first == null) return;
         Node before = first;
         Node current = first.next;
         while (current != null){
