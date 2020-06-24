@@ -55,8 +55,32 @@ public class LinkedList {
         size--;
     }
 
-    public void getKthFromTheEnd(){
-        
+    public int getKthFromTheEnd(int kth){
+
+        if (first == null){
+            throw new IllegalStateException();
+        }
+        Node firstPointer = first;
+        int result = -1;
+        if (kth <= 0){
+            return result;
+        }
+        Node secondPointer = first;
+        for (int i = 1; i < kth; i++){
+            secondPointer = secondPointer.next;
+            if (secondPointer == null){
+                return -1;
+            }
+        }
+        while (secondPointer != null){
+            if (secondPointer.next == null){
+                result = firstPointer.value;
+            } else {
+                firstPointer = firstPointer.next;
+            }
+            secondPointer = secondPointer.next;
+        }
+        return result;
     }
 
     public void removeLast(){

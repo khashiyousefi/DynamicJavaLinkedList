@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         LinkedList list = new LinkedList();
-//        list.addLast(10);
-//        list.addLast(20);
-//        list.addLast(30);
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
 //        list.addFirst(5);
 //        list.addFirst(2);
 //        list.addLast(40);
@@ -19,11 +19,13 @@ public class Main {
 ////        list.removeLast();
 ////        System.out.println(list.size());
 //        System.out.println(Arrays.toString(list.toArray()));
-        list.reverse();
-        var array = list.toArray();
-        System.out.println(Arrays.toString(array));
+//        list.reverse();
+        int test = list.getKthFromTheEnd(5);
+        //list.getKthFromTheEnd(2);
+//        var array = list.toArray();
+//        System.out.println(Arrays.toString(array));
 
-        System.out.println("hahah");
+        System.out.println(test);
 
 
 
