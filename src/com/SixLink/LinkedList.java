@@ -142,6 +142,38 @@ public class LinkedList {
 //        }
 //
 //    }
+    public void findMiddle(){
+
+        if (first == null){
+            throw new IllegalStateException();
+        }
+        Node firstPointer = first;
+        Node secondPointer = first;
+        Node doublePointer = null;
+        if (size % 2 == 0){
+            int position = (size/2);
+            doublePointer = first;
+            for (int i = 1; i < position; i++){
+                secondPointer = secondPointer.next;
+                doublePointer = secondPointer;
+            }
+        }else{
+            for (int i = 0; i < size/2;i++){
+                secondPointer = secondPointer.next;
+            }
+        }
+        while (secondPointer.next != null){
+            secondPointer = secondPointer.next;
+            firstPointer = firstPointer.next;
+        }
+
+        if (doublePointer != null){
+            System.out.println(firstPointer.value+" " +doublePointer.value);
+        }
+        else System.out.println(firstPointer.value);
+
+
+    }
     public void reverse(){
         if (first == null) return;
         Node before = first;
